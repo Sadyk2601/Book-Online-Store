@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin</title>
+  </head>
+  <link
+  href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,700"
+  rel="stylesheet"
+  type="text/css"
+/>
+
+<link
+  rel="stylesheet"
+  href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+/>
+<style>
+  .add-data {
+    display: flex;
+    justify-content: center;
+  }
+  .input {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 20px;
+    align-items: center;
+    align-content: center;
+  }
+  .addDataform {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 40px;
+    background-color: rgb(136, 159, 198);
+  }
+</style>
+
+<link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+<section class="ftco-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6 text-center mb-5">
+        <h1>Kitoblar Olami</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="table-wrap">
+          <table class="table">
+            <thead class="thead-primary">
+              <tr>
+                <th>#</th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Price</th>
+                <th>Buttons</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <% for(let book of books){ %>
+              <tr>
+                <th scope="row"><%= book.id %></th>
+                <td><%= book.title %></td>
+                <td><%= book.author %></td>
+                <td><%= book.price %></td>
+              </tr>
+              <% } %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="add-data">
+  <form class="addDataform">
+    <h1>Kitob qo'shish</h1>
+    <div class="input">
+      <label for="title">Title</label>
+      <input id="title" type="text" name="title" />
+    </div>
+    <div class="input">
+      <label for="author">Author</label>
+      <input id="author" type="text" name="author" />
+    </div>
+    <div class="input">
+      <label for="price">Price</label>
+      <input id="price" type="text" name="price" />
+    </div>
+    <button id="btn">Qoshish</button>
+  </form>
+</div>
+</body>
+<script src="../js/admin.js"></script>
+</html>
